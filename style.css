@@ -1,0 +1,293 @@
+/* --- Базовые стили --- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f111a;
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+  padding-top: 60px;
+}
+
+/* Светлая тема */
+body.light {
+  background-color: #f4f4f4;
+  color: #222222;
+}
+
+/* Контейнер */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 40px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Форма и список задач */
+.task-form, .task-list {
+  background-color: #1a1c2c;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  width: 45%;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light .task-form, body.light .task-list {
+  background-color: #fff;
+  color: #222;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+/* Инпуты, textarea, select */
+input[type="text"], textarea, select, input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #555;
+  background-color: #2a2d3e;
+  color: #ffffff;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.light input[type="text"],
+body.light textarea,
+body.light select,
+body.light input[type="number"] {
+  background-color: #f0f0f0;
+  color: #222;
+  border-color: #ccc;
+}
+
+/* Кнопки */
+button {
+  background-color: #4e4eff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+button:hover {
+  background-color: #6c6cff;
+  transform: scale(1.03);
+}
+
+/* Список задач */
+.task-item {
+  background-color: #25283d;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 10px;
+  border-left: 6px solid #4e4eff;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light .task-item {
+  background-color: #e8e8ff;
+  color: #222;
+}
+
+.task-item h3 {
+  margin: 0 0 8px;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-item p {
+  margin: 4px 0;
+  color: #ccc;
+}
+
+body.light .task-item p {
+  color: #555;
+}
+
+/* Приоритеты - цвета границ и заголовков */
+.task-item[data-priority="Высокий"] {
+  border-left-color: #ff4e4e;
+}
+
+.task-item[data-priority="Средний"] {
+  border-left-color: #ffd54e;
+}
+
+.task-item[data-priority="Низкий"] {
+  border-left-color: #4eff8c;
+}
+
+.task-item[data-priority="Высокий"] h3 {
+  color: #ff4e4e;
+}
+
+.task-item[data-priority="Средний"] h3 {
+  color: #ffd54e;
+}
+
+.task-item[data-priority="Низкий"] h3 {
+  color: #4eff8c;
+}
+
+/* Чекбокс в заголовке */
+.task-item input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Отмеченные задачи - зачёркнуты */
+.task-item.completed h3 {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Фильтры */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* Меню-бургер и навигация */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #1a1c2c;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 2000;
+}
+
+body.light header {
+  background-color: #ddd;
+}
+
+.burger {
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  user-select: none;
+  z-index: 2100;
+}
+
+body.light .burger {
+  color: #222;
+}
+
+/* Меню слева */
+.nav-menu {
+  position: fixed;
+  top: 50px;
+  left: -250px;
+  width: 250px;
+  height: calc(100vh - 50px);
+  background-color: #1a1c2c;
+  color: white;
+  transition: left 0.3s ease;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 2050;
+  overflow-y: auto;
+}
+
+body.light .nav-menu {
+  background-color: #fff;
+  color: #222;
+}
+
+.nav-menu.active {
+  left: 0;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.nav-menu a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-menu a:hover {
+  text-decoration: underline;
+}
+
+/* Кнопка переключения темы */
+#theme-toggle {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  user-select: none;
+  z-index: 2100;
+  transition: color 0.3s;
+}
+
+body.light #theme-toggle {
+  color: #222;
+}
+
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .task-form, .task-list {
+    width: 100%;
+  }
+}
+
+/* Таймер-кнопка */
+.timer-btn {
+  margin-left: 10px;
+  background: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+body.light .timer-btn {
+  background: #ddd;
+  color: #222;
+}
+
+.timer-btn:hover {
+  background: #555;
+}
+
+body.light .timer-btn:hover {
+  background: #ccc;
+}

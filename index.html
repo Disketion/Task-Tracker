@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+<!-- Верхняя часть -->
+    <div class="burger" id="burger">&#9776;</div>
+    <nav class="nav-menu" id="nav-menu">
+      <ul>
+        <li><a href="https://github.com/Disketion" target="_blank" rel="noopener noreferrer">Мой GitHub</a></li>
+        <li>Учусь в Череповецком химико-технологическом колледже</li>
+        <li>Этот сайт — мой учебный проект</li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" title="Переключить тему">🌙</button>
+  </header>
+<!-- Блок с функциями добавления задач -->
+  <main class="container">
+    <section class="task-form">
+      <h2>Добавить задачу</h2>
+      <input id="title" type="text" placeholder="Название задачи" />
+      <textarea id="description" placeholder="Описание"></textarea>
+      <select id="category">
+        <option>Работа</option>
+        <option>Учёба</option>
+        <option>Дом</option>
+        <option>Разное</option>
+      </select>
+      <select id="priority">
+        <option>Средний</option>
+        <option>Высокий</option>
+        <option>Низкий</option>
+      </select>
+      <input id="time" type="number" min="1" value="30" />
+      <button id="add-btn">Добавить</button>
+    </section>
+<!-- Блок с листом добавленных задач и их фильтрации -->
+    <section class="task-list">
+      <h2>Список задач</h2>
+      <div class="filters">
+        <select id="filter">
+          <option value="all">Все категории</option>
+          <option value="Работа">Работа</option>
+          <option value="Учёба">Учёба</option>
+          <option value="Дом">Дом</option>
+          <option value="Разное">Разное</option>
+        </select>
+        <select id="sort">
+          <option value="time">Сортировать по времени</option>
+          <option value="priority">Сортировать по приоритету</option>
+        </select>
+      </div>
+      <div id="tasks"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
