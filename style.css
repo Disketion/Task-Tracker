@@ -360,3 +360,15 @@ body.pink .timer-btn {
 body.pink .timer-btn:hover {
   background: #ffb6c1;
 }
+
+body.pink button {
+  background-color: #f8c2d0;  /* светло-розовый */
+  color: #800040;             /* бардовый текст */
+  border: none;
+
+  cursor: pointer;
+}
+
+body.pink button:hover {
+  background-color: #f3a8bd;  /* чуть темнее при наведении */
+}
