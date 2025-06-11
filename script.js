@@ -3,11 +3,17 @@ const themeToggleBtn = document.getElementById('theme-toggle');
 const body = document.body;
 
 function setTheme(theme) {
+  // Удаляем все классы тем
+  body.classList.remove('light', 'pink');
+  
   if (theme === 'light') {
     body.classList.add('light');
     themeToggleBtn.textContent = '🌞';
+  } else if (theme === 'pink') {
+    body.classList.add('pink');
+    themeToggleBtn.textContent = '🌸';
   } else {
-    body.classList.remove('light');
+    // dark theme
     themeToggleBtn.textContent = '🌙';
   }
   localStorage.setItem('theme', theme);
@@ -17,8 +23,21 @@ const savedTheme = localStorage.getItem('theme') || 'dark';
 setTheme(savedTheme);
 
 themeToggleBtn.addEventListener('click', () => {
-  const currentTheme = body.classList.contains('light') ? 'light' : 'dark';
-  setTheme(currentTheme === 'light' ? 'dark' : 'light');
+  let currentTheme = 'dark';
+  if (body.classList.contains('light')) {
+    currentTheme = 'light';
+  } else if (body.classList.contains('pink')) {
+    currentTheme = 'pink';
+  }
+  
+  // Циклическое переключение: dark -> light -> pink -> dark
+  if (currentTheme === 'dark') {
+    setTheme('light');
+  } else if (currentTheme === 'light') {
+    setTheme('pink');
+  } else {
+    setTheme('dark');
+  }
 });
 
 // --- Меню-бургер ---

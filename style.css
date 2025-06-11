@@ -291,3 +291,72 @@ body.light .timer-btn {
 body.light .timer-btn:hover {
   background: #ccc;
 }
+
+/* --- Розовая тема --- */
+body.pink {
+  background-color: #ffe4ec;
+  color: #5c002e;
+}
+
+body.pink .task-form,
+body.pink .task-list {
+  background-color: #fff0f5;
+  color: #5c002e;
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.3);
+}
+
+body.pink input[type="text"],
+body.pink textarea,
+body.pink select,
+body.pink input[type="number"] {
+  background-color: #ffe4ec;
+  color: #5c002e;
+  border-color: #ffb6c1;
+}
+
+body.pink .task-item {
+  background-color: #fff0f5;
+  color: #5c002e;
+}
+
+body.pink .task-item p {
+  color: #800040;
+}
+
+body.pink .task-item[data-priority="Высокий"] h3 {
+  color: #d10044;
+}
+
+body.pink .task-item[data-priority="Средний"] h3 {
+  color: #ff69b4;
+}
+
+body.pink .task-item[data-priority="Низкий"] h3 {
+  color: #ff99cc;
+}
+
+body.pink header {
+  background-color: #ffc0cb;
+}
+
+body.pink .burger {
+  color: #5c002e;
+}
+
+body.pink .nav-menu {
+  background-color: #ffe4ec;
+  color: #5c002e;
+}
+
+body.pink #theme-toggle {
+  color: #5c002e;
+}
+
+body.pink .timer-btn {
+  background: #ffc0cb;
+  color: #5c002e;
+}
+
+body.pink .timer-btn:hover {
+  background: #ffb6c1;
+}
