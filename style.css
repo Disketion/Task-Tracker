@@ -131,7 +131,7 @@ body.light .task-item p {
 }
 
 .task-item[data-priority="Низкий"] {
-  border-left-color: #4eff8c;
+  border-left-color: #7af4a4;
 }
 
 .task-item[data-priority="Высокий"] h3 {
@@ -139,11 +139,11 @@ body.light .task-item p {
 }
 
 .task-item[data-priority="Средний"] h3 {
-  color: #ffd54e;
+  color: #ffcc33;
 }
 
 .task-item[data-priority="Низкий"] h3 {
-  color: #4eff8c;
+  color: #7af4a4;
 }
 
 /* Чекбокс в заголовке */
@@ -317,7 +317,7 @@ body.pink input[type="number"] {
 }
 
 body.pink .task-item {
-  background-color: #fff0f5;
+  background-color: #ffe4ec;
   color: #5c002e;
 }
 
@@ -326,15 +326,15 @@ body.pink .task-item p {
 }
 
 body.pink .task-item[data-priority="Высокий"] h3 {
-  color: #d10044;
+  color: #c20041;
 }
 
 body.pink .task-item[data-priority="Средний"] h3 {
-  color: #ff69b4;
+  color: #ff4fa7;
 }
 
 body.pink .task-item[data-priority="Низкий"] h3 {
-  color: #ff99cc;
+  color: #ffa8d3;
 }
 
 body.pink header {
