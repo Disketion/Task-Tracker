@@ -24,6 +24,7 @@ body.light {
   padding: 40px;
   gap: 20px;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 /* Форма и список задач */
